@@ -1,0 +1,12 @@
+#!/bin/bash
+#gmt pscoast -Jc137.7500/35.0000/1:15000000 -R125/150.5/23/47 -B5 -Df -G150 -Na -W -L135/24/24/500 -P -K -G220/220/220 -X0.9 > out.ps
+#gmt psmeca << END -Jc137.7500/35.0000/1:15000000 -R125/150.5/23/47 -Sm0.15 -P -O -T -G110/110/110 >> out.ps
+
+gmt pscoast -Jc137.7500/35.0000/1:12000000 -R125/150/30/47 -B1 -Df -G150 -Na -W -L135/24/24/500 -P -K -G220/220/220 -X0.9 > out.ps
+gmt psmeca << END -J -R -Sm0.15 -P -O -T -G110/110/110 >> out.ps
+#longitude latitude depth mrr(mzz) mtt(mxx) mff(myy) mrt(mxz) mrf(-myz) mtf(-mxy) exponent X Y text(origin_time(UT))
+138.19 33.05 302 0.34 0.16 -0.50 -0.77 -4.57 -1.58 26 X Y 200908091055A  
+140.68 32.74 55 0.39 -0.05 -0.34 -0.17 -0.80 -0.28 26 X Y 200908122248A  
+END
+
+

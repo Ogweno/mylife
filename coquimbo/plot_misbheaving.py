@@ -1,0 +1,38 @@
+from matplotlib import pyplot as plt
+from obspy import read
+
+st1=read(u'/Users/dmelgar/Coquimbo2015/GPS/proc/cnba.LXZ.sac')
+st2=read(u'/Users/dmelgar/Coquimbo2015/GPS/proc/lvil.LXZ.sac')
+st3=read(u'/Users/dmelgar/Coquimbo2015/GPS/proc/pfrj.LXZ.sac')
+
+plt.figure()
+plt.subplot(311)
+plt.plot(st1[0].times(),st1[0].data,'r')
+plt.grid()
+plt.plot([14000,14000],[-0.5,0.5],'g--',lw=3)
+plt.ylim([-0.2,0.2])
+plt.xlim([0,17000])
+plt.legend(['cnba'],loc=2)
+plt.ylabel('Up(m)')
+plt.xlabel('Seconds after 19:00:00 GPS')
+
+plt.subplot(312)
+plt.plot(st2[0].times(),st2[0].data,'k')
+plt.grid()
+plt.legend(['lvil'],loc=2)
+plt.plot([14000,14000],[-0.5,0.5],'g--',lw=3)
+plt.ylim([-0.15,0.15])
+plt.xlim([0,17000])
+plt.ylabel('Up(m)')
+plt.xlabel('Seconds after 19:00:00 GPS')
+
+plt.subplot(313)
+plt.plot(st3[0].times(),st3[0].data,'b')
+plt.grid()
+plt.legend(['pfrj'],loc=2)
+plt.ylabel('Up(m)')
+plt.xlabel('Seconds after 19:00:00 GPS')
+plt.xlim([0,17000])
+plt.plot([14000,14000],[-0.5,0.5],'g--',lw=3)
+plt.ylim([-0.4,0.1])
+plt.show()
